@@ -1,0 +1,152 @@
+.grid {
+  /* border: 1px solid red; */
+}
+
+#appBar {
+  position: absolute;
+  z-index: 99999;
+}
+
+#menu-container {
+  margin-right: auto;
+  display: contents;
+  float: left;
+}
+
+#title {
+  text-align: left;
+  margin-top: 10px;
+  height: 100%;
+  width: 100%;
+  font-size: 25px;
+}
+
+#logo-container {
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#search-bar-container {
+  width: 100%;
+  height: 100%;
+}
+
+#search-bar {
+  background-color: transparent;
+  outline: none;
+  border-color: transparent;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 15px;
+}
+
+#icon-container {
+  float: right;
+}
+
+#search-icon {
+  color: white;
+}
+
+#heart-icon {
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  #hamburger {
+    color: white;
+    transition: .3s ease-in;
+    float: left;
+  }
+  #settings-icon {
+    display: none;
+    transition: .3s ease-in;
+  }
+  #logo-container {
+    background-image: url('./Images/logo2.png');
+    width: 40px;
+    height: 40px;
+    transition: .3s;
+    margin-top: 5px;
+  }
+  .toolbar-filter {
+    opacity: 0;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    transition: .1s;
+  }
+  #bottom-row {
+    opacity: 0;
+    min-height: 0 !important;
+    max-height: 0 !important;
+    transition: .3s;
+  }
+  #side-nav-container {
+    width: 170px !important;
+    height: 100% !important;
+    background-color: #373B44 !important;
+  }
+  .drawer>* {
+    position:  !important;
+    margin-top: 56px !important;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  #hamburger {
+    display: none;
+    transition: .3s ease-in;
+  }
+  #settings-icon {
+    color: white;
+    transition: .3s ease-in;
+  }
+  #logo-container {
+    background-image: url('./Images/logo1.png');
+    margin-top: 10px !important;
+    height: 30px;
+    width: 150px;
+    transition: .3s;
+  }
+  #bottom-row {
+    min-height: 30px !important;
+    background-color: lightgrey;
+    color: #696969;
+    font-size: 100px !important;
+    opacity: 1;
+    transition: .3s;
+  }
+  .toolbar-filter {
+    opacity: 1;
+    transition: .3s;
+  }
+  .toolbar-filter:hover {
+    background-color: #696969;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+  }
+}
+
+#category {
+  color: white;
+  font-size: 20px;
+  margin: 5px;
+  font-weight: bold;
+}
+
+#side-filter {
+  color: lightgrey;
+  padding: 5px;
+  font-size: 18px;
+}
+
+#side-filter:hover {
+  padding: 20px;
+  transition: .3s;
+  background-color: lightgrey;
+  color: #373B44;
+}
