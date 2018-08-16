@@ -1,0 +1,53 @@
+#nav-container .nav-bar {
+    background: transparent;
+    transition: .3s;
+    box-shadow: none;
+}
+
+#nav-container .nav-scrolled {
+    background: #212121;
+    position: fixed;
+    transition: .3s;
+}
+
+#icon-button-container {
+    position: absolute;
+    right: 0;
+    transition: .3s;
+}
+
+#nav-container .nav-button {
+    color: white;
+}
+
+@media only screen and (max-width: 700px) {
+
+    #large-screen-container {
+        display: none;
+        transition: .3s;
+    }
+
+    #small-screen-container {
+        display: block;
+        transition: .3s;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+
+    #nav-container .nav-button {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    #large-screen-container {
+        display: block;
+        transition: .3s;
+    }
+
+    #small-screen-container {
+        display: none;
+        transition: .3s;
+
+    }
+}

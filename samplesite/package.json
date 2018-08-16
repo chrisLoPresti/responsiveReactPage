@@ -1,0 +1,23 @@
+{
+  "name": "samplesite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "Start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix samplesite",
+    "dev": "concurrently \"npm run server \" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.6.1",
+    "express": "^4.16.3",
+    "nodemailer": "^4.6.8",
+    "nodemon": "^1.18.3",
+    "xoauth2": "^1.2.0"
+  }
+}

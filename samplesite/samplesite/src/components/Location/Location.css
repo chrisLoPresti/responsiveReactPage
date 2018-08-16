@@ -1,0 +1,66 @@
+#location-pic {
+    width: 100%;
+    height: auto;
+}
+
+#location-image-container {
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 45px 15px 15px 15px;
+}
+
+#image-button {
+    background-color: white;
+}
+
+#location-and-hours {
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+}
+
+#address {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#hours {
+    padding-top: 15px;
+}
+
+#direction-button {
+    transition: .3s;
+    width: 80%;
+    font-size: 10px;
+    background-color: #004e77;
+    color: white;
+    margin-top: 25px;
+}
+
+@media only screen and (max-width: 400px) {
+    #direction-button {
+        width: 80%;
+        margin-top: 25px;
+    }
+}
+
+@media only screen and (min-width: 401px) {
+    #direction-button {
+        width: 50%;
+        margin-top: 10px;
+    }
+}
+
+#location-paragraph {
+    padding-left: 30px;
+    padding-bottom: 50px;
+}
+
+.location-text {
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+#location-info {
+    padding-right: 15px;
+}
