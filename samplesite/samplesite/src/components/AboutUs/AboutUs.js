@@ -25,8 +25,15 @@ const AboutUs = () => (
                     </Button>
                 </Typography>
             </Grid>
-            <Grid id="about-image-container" item sm={12} md={5}>
-                <img alt = 'About Us' id="about-image" src={require('../../Images/about.jpg')}/>
+            <Grid
+                id="about-image-container"
+                item sm={12}
+                md={5}>
+                <img
+                    alt='About Us'
+                    id="about-image"
+                    src={require('../../Images/about.jpg')}
+                />
             </Grid>
 
         </Grid>

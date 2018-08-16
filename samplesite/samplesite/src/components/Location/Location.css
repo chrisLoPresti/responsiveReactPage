@@ -17,6 +17,8 @@
     justify-content: center;
     text-align: center;
     padding: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 #address {

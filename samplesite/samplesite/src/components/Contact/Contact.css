@@ -1,8 +1,3 @@
-#contact-section {
-    background: #212121;
-    width: 100%;
-}
-
 #contact-header {
     background-color: #212121;
     color: white;
@@ -18,22 +13,6 @@
     color: red;
 }
 
-@media only screen and (min-width: 551px) {
-    input[type=text], select, textarea {
-        transition: .3s;
-        width: 500%;
-    }
-
-}
-
-@media only screen and (max-width: 550px) {
-    input[type=text], select, textarea {
-        transition: .3s;
-        width: 100%;
-    }
-
-}
-
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
@@ -46,9 +25,8 @@ input[type=text], select, textarea {
 }
 
 .container {
-    border-radius: 5px;
     background-color: whitesmoke;
-    padding: 20px;
+    padding: 30px 20% 15px 20%;
 }
 
 #form-buttons {
@@ -62,13 +40,14 @@ input[type=text], select, textarea {
     background-color: #004e77;
     color: white;
     width: 50%;
+    margin-bottom: 20px;
 }
 
 .missing-info {
     border: 1px solid red !important;
 }
 
-.warning{
+.warning {
     color: red;
     margin-left: 10px;
     font-size: 10px;

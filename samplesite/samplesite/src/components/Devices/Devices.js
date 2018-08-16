@@ -45,7 +45,11 @@ class Devices extends React.Component {
         return (
             <div id="devices-section">
                 <Grid container>
-                    <Grid id="devices-info" item sm={12} md={4}>
+                    <Grid
+                        d="devices-info"
+                        item
+                        sm={12}
+                        md={4}>
                         <h2 className="devices-text">
                             Check out our rigs and pieces
                         </h2>
@@ -67,15 +71,15 @@ class Devices extends React.Component {
                             cellHeight={160}
                             cols={3}
                         >
-                            {images.map((tile, i) => (
+                            {images.map((tile, index) => (
                                 <GridListTile
-                                    key={i}
+                                    key={tile.title}
                                     cols={1}
                                 >
                                     <img
                                         className="devices-pic"
                                         alt={tile.title}
-                                        onClick={this.openImage(i)}
+                                        onClick={this.openImage(index)}
                                         src={tile.img}
                                     />
                                 </GridListTile>

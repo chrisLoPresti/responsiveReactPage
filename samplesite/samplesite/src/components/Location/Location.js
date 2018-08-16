@@ -26,11 +26,11 @@ const Location = () => (
                 2m2!1d-74.1008783!2d40.0990314"
                     target="_blank"
                 >
-                <img
-                    alt="123 freehold st"
-                    id="location-pic"
-                    src={LocationPic}
-                />
+                    <img
+                        alt="123 freehold st"
+                        id="location-pic"
+                        src={LocationPic}
+                    />
                 </Button>
             </Grid>
             <Grid

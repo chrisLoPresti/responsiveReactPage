@@ -12,12 +12,12 @@ import * as constants from '../../constants/constants';
 import './Contact.css'
 
 const config = {
-    apiKey: "YOUR KEY",
-    authDomain: "YOUR AUTH",
-    databaseURL: "YOUR URL",
-    projectId: "YOUR ID",
-    storageBucket: "YOUR BUCKET",
-    messagingSenderId: "YOUR ID"
+    apiKey: "YOUR INFO",
+    authDomain: "YOUR INFO",
+    databaseURL: "YOUR INFO",
+    projectId: "YOUR INFO",
+    storageBucket: "YOUR INFO",
+    messagingSenderId: "1YOUR INFO"
 };
 firebase.initializeApp(config);
 
@@ -42,18 +42,7 @@ class Contact extends React.Component {
     };
 
     validateForm = () => {
-
         const {firstName, email, subject} = this.state;
-
-        if (firstName === '') {
-            document.getElementById('fname').classList.add("missing-info");
-        }
-        if (email === '' || !constants.re.test(email)) {
-            document.getElementById('email').classList.add("missing-info");
-        }
-        if (subject === '') {
-            document.getElementById('subject').classList.add("missing-info");
-        }
 
         if (firstName === '' || email === '' || !constants.re.test(email) || subject === '') {
             this.setState({
@@ -61,13 +50,10 @@ class Contact extends React.Component {
             });
             return;
         }
-
         this.saveForm();
-
     };
 
     saveForm = () => {
-
         const {firstName, lastName, number, email, subject} = this.state;
 
         try {
@@ -100,7 +86,6 @@ class Contact extends React.Component {
     };
 
     clearForm = () => {
-
         if (this.state.success) {
             this.setState({
                 firstName: '',
@@ -116,10 +101,6 @@ class Contact extends React.Component {
                 localStorage.removeItem("vape-shop-email");
                 localStorage.removeItem("vape-shop-subject");
             });
-
-            document.getElementById('fname').classList.remove("missing-info");
-            document.getElementById('email').classList.remove("missing-info");
-            document.getElementById('subject').classList.remove("missing-info");
             NotificationManager.success('We will get back to you shortly', 'Email sent!', 3000);
         } else {
             NotificationManager.error('Please try again', 'Email failed!', 3000);
@@ -141,24 +122,37 @@ class Contact extends React.Component {
                     <label htmlFor="fname">First Name</label>
                     <label className="asterisk">*</label>
                     {(warning && firstName === '') && <label className="warning">Please enter a fist name</label>}
+                    <br/>
                     <input onChange={this.handleChange('firstName')} type="text" id="fname" name="firstname"
-                           placeholder="Your name.." value={firstName}/>
+                           placeholder="Your name.." className={(warning && firstName === '') ? "missing-info" : "safe"}
+                           value={firstName}/>
+                    <br/>
                     <label htmlFor="lname">Last Name</label>
+                    <br/>
                     <input onChange={this.handleChange('lastName')} type="text" id="lname" name="lastname"
                            placeholder="Your last name.." value={lastName}/>
+                    <br/>
                     <label htmlFor="f_telephone">Phone Number</label>
+                    <br/>
                     <input onChange={this.handleChange('number')} type="text" id="f_telephone" name="f_telephone"
                            placeholder="Your number.." value={number}/>
+                    <br/>
                     <label htmlFor="email">Email</label>
                     <label className="asterisk">*</label>
                     {(warning && (!constants.re.test(email) || email === '')) &&
                     <label className="warning">Please enter a valid email</label>}
+                    <br/>
                     <input onChange={this.handleChange('email')} type="text" id="email" name="email"
-                           placeholder="Your email.." value={email}/>
+                           placeholder="Your email.."
+                           className={(warning && (!constants.re.test(email) || email === '')) ? "missing-info" : "safe"}
+                           value={email}/>
+                    <br/>
                     <label htmlFor="subject">Subject</label>
                     <label className="asterisk">*</label>
+                    <br/>
                     {(warning && subject === '') && <label className="warning">Please enter a message</label>}
                     <textarea onChange={this.handleChange('subject')} id="subject" name="subject"
+                              className={(warning && subject === '') ? "missing-info" : "safe"}
                               placeholder="Write something.." value={subject}/>
                 </div>
                 <div id="form-buttons">

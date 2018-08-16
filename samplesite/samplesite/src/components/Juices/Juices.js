@@ -34,7 +34,11 @@ class Juices extends React.Component {
     };
 
     render() {
-        const {openModal, imageIndex, images} = this.state;
+        const {
+            openModal,
+            imageIndex,
+            images,
+        } = this.state;
         return (
             <div id="juices-section">
                 <Grid container>
@@ -47,22 +51,26 @@ class Juices extends React.Component {
                             cellHeight={160}
                             cols={3}
                         >
-                            {images.map((tile, i) => (
+                            {images.map((tile, index) => (
                                 <GridListTile
-                                    key={i}
+                                    key={tile.title}
                                     cols={1}
                                 >
                                     <img
                                         className="juices-pic"
                                         alt={tile.title}
-                                        onClick={this.openImage(i)}
+                                        onClick={this.openImage(index)}
                                         src={tile.img}
                                     />
                                 </GridListTile>
                             ))}
                         </GridList>
                     </Grid>
-                    <Grid id="juices-info" item sm={12} md={4} className={"determine-order"}>
+                    <Grid
+                        id="juices-info"
+                        item sm={12}
+                        md={4}
+                        className={"determine-order"}>
                         <h2 className="juices-text">
                             Check out our juices
                         </h2>
