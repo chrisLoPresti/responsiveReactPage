@@ -29,8 +29,8 @@ app.post('/api/form', (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: 'lopresti.chris@gmail.com',
-            pass: 'ctrock21',
+            user: 'YOUR EMAIL',
+            pass: 'YOUR PASS',
         },
         tls: {
             rejectUnauthorized: false
@@ -39,7 +39,7 @@ app.post('/api/form', (req, res) => {
 
     let mailOptions = {
         from: '"Website Contact Form" <lopresti.chris@gmail.com>',
-        to: 'lopresti.chris@gmail.com',
+        to: 'YOUR EMAIL',
         subject: 'Customer Question',
         text: 'You have a new message',
         html: output,
