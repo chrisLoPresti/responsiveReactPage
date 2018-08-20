@@ -3,13 +3,15 @@ import {
     Typography,
     Button,
 } from '@material-ui/core';
-import ScrollIntoView from 'react-scroll-into-view';
 import Main from '../../Images/main.jpg';
 import Main2 from '../../Images/main2.jpg';
 import './LandingPage.css'
 
+// import that allows us to smoothly scroll to different sections
+let scrollToElement = require('scroll-to-element');
+
+// simple constant that holds the landing page image and the button to learn more
 const LandingPage = () => (
-    <div>
         <div id="landing-page">
             <img
                 alt="Smoke n' Mirrors"
@@ -28,15 +30,18 @@ const LandingPage = () => (
                 Smoke n' Mirrors
             </Typography>
             <div id="landing-button-container">
-                <ScrollIntoView
-                    selector="#info-section">
-                    <Button id="landing-button">
+                    <Button id="landing-button"
+                            onClick={() =>
+                                scrollToElement("#info-section", {
+                                    offset: -52,
+                                    ease: 'inOutCube',
+                                    duration: 1000
+                                })}
+                    >
                         Learn More
                     </Button>
-                </ScrollIntoView>
             </div>
         </div>
-    </div>
 );
 
 export default LandingPage;

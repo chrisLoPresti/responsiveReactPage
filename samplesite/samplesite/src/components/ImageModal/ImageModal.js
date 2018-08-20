@@ -18,25 +18,25 @@ class ImageModal extends React.Component {
             currentIndex: 0,
         }
     }
-
+// once props are received update the image index
     componentWillReceiveProps(props) {
         this.setState({
             currentIndex: props.imageIndex,
         });
     }
-
+// changes images to the next image
     handleNext = () => {
         this.setState((prevState) => ({
             currentIndex: prevState.currentIndex + 1
         }));
     };
-
+// changes images to the previous image
     handlePrev = () => {
         this.setState((prevState) => ({
             currentIndex: prevState.currentIndex - 1
         }));
     };
-
+// simple modal with next and previous button to view images
     render() {
         const {open, images, closeImage,} = this.props;
         const {currentIndex} = this.state;

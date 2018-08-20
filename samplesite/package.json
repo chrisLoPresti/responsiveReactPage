@@ -19,5 +19,8 @@
     "nodemailer": "^4.6.8",
     "nodemon": "^1.18.3",
     "xoauth2": "^1.2.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
   }
 }

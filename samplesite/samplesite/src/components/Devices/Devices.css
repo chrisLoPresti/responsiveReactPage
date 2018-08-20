@@ -1,31 +1,31 @@
-#devices-section{
+#devices-section {
     background-color: whitesmoke;
+    padding-bottom: 30px;
 }
 
 #devices-info {
     padding-right: 15px;
+    padding-left: 15px;
 }
 
 .devices-text {
-    padding-top: 50px;
-    padding-left: 30px;
+    padding: 15px 30px 0 15px;
 }
 
 #devices-paragraph {
-    padding-left: 30px;
-    padding-bottom: 50px;
+    padding: 15px 30px 0 15px;
 }
 
 #devices-image-container {
+    margin-top: 50px;
     max-height: 300px;
     overflow: scroll;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 50px 15px 15px 15px;
+    padding: 0 15px 0 15px;
 }
 
-
-.devices-pic{
+.devices-pic {
     cursor: pointer;
 }
 

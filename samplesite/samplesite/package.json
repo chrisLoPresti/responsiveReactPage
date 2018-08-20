@@ -1,4 +1,5 @@
 {
+  "homepage": "http://chrisLoPresti.github.io/responsiveReactPage",
   "name": "samplesite",
   "version": "0.1.0",
   "private": true,
@@ -6,7 +7,7 @@
   "dependencies": {
     "@material-ui/icons": "^2.0.2",
     "axios": "^0.18.0",
-    "firebase": "^5.3.1",
+    "firebase": "^5.4.0",
     "gmail-send": "^1.2.14",
     "google-maps-react": "^2.0.2",
     "jquery": "^3.3.1",
@@ -27,11 +28,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"

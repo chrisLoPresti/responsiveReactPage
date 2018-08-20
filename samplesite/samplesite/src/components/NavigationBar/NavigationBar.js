@@ -12,8 +12,10 @@ import {
 } from '@material-ui/icons';
 import './NavigationBar.css';
 import DropdownList from '../DropdownList/DropdownList';
-import ScrollIntoView from 'react-scroll-into-view';
 import * as constants from '../../constants/constants';
+
+// import that allows us to smoothly scroll to different sections
+let scrollToElement = require('scroll-to-element');
 
 class NavigationBar extends React.Component {
 
@@ -25,62 +27,72 @@ class NavigationBar extends React.Component {
         };
     }
 
+    // scroll listener used to determine how far from the top of the page we are
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
-
+    // removes the listener when the component unmounts
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     }
 
-
+    // when we scroll, check to see if we are 80 pixels from the top and if so, make the navbar solid
     handleScroll = () => {
         const top = document.documentElement.scrollTop
             || document.body.parentNode.scrollTop
             || document.body.scrollTop;
-        if (top < 50) {
+        if (top < 80) {
             this.setState({
                 scrolled: false,
             });
         }
-        else if (top >= 50) {
+        else if (top >= 80) {
             this.setState({
                 scrolled: true,
             });
         }
     };
 
+    // when you click the hamburger button, render the drop down list with options
     handleClickMenu = () => {
         this.setState({
             openDropdownList: !this.state.openDropdownList,
         });
-    }
+    };
 
+    // simple navbar that holds buttons that when clicked, scroll you to a different section
     render() {
         const {scrolled, openDropdownList} = this.state;
         return (
             <div id="nav-container">
                 <AppBar className={scrolled ? "nav-scrolled" : "nav-bar"}>
                     <Toolbar>
-                        <ScrollIntoView
-                            alignToTop={true}
-                            selector="#nav-container">
-                            <IconButton
-                                className="nav-button">
-                                <Home className="icon"/>
-                            </IconButton>
-                        </ScrollIntoView>
+
+                        <IconButton
+                            onClick={() =>
+                                scrollToElement("#nav-container", {
+                                    offset: 0,
+                                    ease: 'inOutBack',
+                                    duration: 1500
+                                })}
+                            className="nav-button">
+                            <Home className="icon"/>
+                        </IconButton>
+
                         <div id="icon-button-container">
                             <div id="large-screen-container">
                                 {constants.sections.map(section => (
-                                    <ScrollIntoView
+                                    <Button
                                         key={section}
-                                        alignToTop={true}
-                                        selector={`#${section}-section`}>
-                                        <Button className="nav-button">
-                                            {section}
-                                        </Button>
-                                    </ScrollIntoView>
+                                        onClick={() =>
+                                        scrollToElement(`#${section}-section`, {
+                                            offset: -52,
+                                            ease: 'inOutCube',
+                                            duration: 1000
+                                        })}
+                                            className="nav-button">
+                                        {section}
+                                    </Button>
                                 ))}
                             </div>
                             <div id="small-screen-container">

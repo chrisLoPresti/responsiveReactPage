@@ -6,8 +6,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.post('/api/form', (req, res) => {
+/* axios post call to the store comes here
+ * this sets up the email that will be sent to the store,
+ * letting them know someone filled out the contact form
+ */
+app.post('/api/store', (req, res) => {
 
+    //output: what we want the body of our email to be
     const output = (
         `<div>
             <br/>
@@ -23,28 +28,30 @@ app.post('/api/form', (req, res) => {
         </div>`
     );
 
-
+    // credentials for your gmail account go here ( the sender )
     let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
         secure: true,
         auth: {
-            user: 'YOUR EMAIL',
-            pass: 'YOUR PASS',
+            user: 'YOUR EMAIL ADDRESS',
+            pass: 'YOUR EMAIL ADDRESS PASSWORD',
         },
         tls: {
             rejectUnauthorized: false
         }
     });
 
+    // email options <{sameEmailAsAbove}>
     let mailOptions = {
-        from: '"Website Contact Form" <lopresti.chris@gmail.com>',
-        to: 'YOUR EMAIL',
+        from: '"Website Contact Form" <SAMEEMAILASABOVE@SAMEPROVIDER.com>',
+        to: 'YOUR EMAIL ADDRESS DESTINATION',
         subject: 'Customer Question',
         text: 'You have a new message',
         html: output,
     };
 
+    //send the email and wait for a response
     transporter.sendMail(mailOptions, (error) => {
         if (error) {
             res.send('fail');
@@ -54,6 +61,60 @@ app.post('/api/form', (req, res) => {
         }
     });
 });
+
+/* axios post call to the customer comes here
+ * this sets up the email that will be sent to the customer,
+ * letting them know that their contact form info was emailed to the store,
+ * and they will have a response shortly
+ */
+app.post('/api/customer', (req, res) => {
+
+    //output: what we want the body of our email to be
+    const output = (
+        `<div>
+            <br/>
+            <h3>We recieved your email, ${req.body.firstName}!</h3>
+            <br/>
+            <p>We will get back to you shortly.</p>
+             <br/>
+            <p>- Smoke N' Mirrors Team</p>
+        </div>`
+    );
+
+    // credentials for your gmail account go here ( the sender )
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            user: 'YOUR EMAIL ADDRESS',
+            pass: 'YOUR EMAIL ADDRESS PASSWORD',
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    });
+
+    // email options <{sameEmailAsAbove}>, this time the "to" is to the email in the form
+    let mailOptions = {
+        from: '"Smoke N\' Mirrors" <SAMEEMAILASABOVE@SAMEPROVIDER.com>',
+        to: req.body.email,
+        subject: 'We received your email',
+        text: 'We will get back to you shortly',
+        html: output,
+    };
+
+    //send the email and wait for a response
+    transporter.sendMail(mailOptions, (error) => {
+        if (error) {
+            res.send('fail');
+            console.log(error)
+        } else {
+            res.send('success');
+        }
+    });
+});
+
 
 const PORT = process.env.PORT || 3001;
 
