@@ -15,12 +15,12 @@ const validEmail = constants.validEmail;
 const validPhoneNumber = constants.validPhoneNumber;
 
 const config = {
-    apiKey: "YOUR KEY",
-    authDomain: "YOUR DOMAIN",
-    databaseURL: "YOUR URL",
-    projectId: "YOUR ID",
-    storageBucket: "YOUR STORAGE BUCKET",
-    messagingSenderId: "YOUR MESSAGING SENDER ID"
+    apiKey: "AIzaSyBEIaW4yTdJKTJM5rU1AMAAubGudF89U7Q",
+    authDomain: "samplesite-31721.firebaseapp.com",
+    databaseURL: "https://samplesite-31721.firebaseio.com",
+    projectId: "samplesite-31721",
+    storageBucket: "samplesite-31721.appspot.com",
+    messagingSenderId: "1055366073256"
 };
 firebase.initializeApp(config);
 

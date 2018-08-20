@@ -34,8 +34,8 @@ app.post('/api/store', (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: 'YOUR EMAIL ADDRESS',
-            pass: 'YOUR EMAIL ADDRESS PASSWORD',
+            user: 'lopresti.chris@gmail.com',
+            pass: 'ctrock21',
         },
         tls: {
             rejectUnauthorized: false
@@ -44,8 +44,8 @@ app.post('/api/store', (req, res) => {
 
     // email options <{sameEmailAsAbove}>
     let mailOptions = {
-        from: '"Website Contact Form" <SAMEEMAILASABOVE@SAMEPROVIDER.com>',
-        to: 'YOUR EMAIL ADDRESS DESTINATION',
+        from: '"Website Contact Form" <lopresti.chris@gmail.com>',
+        to: 'lopresti.chris@gmail.com',
         subject: 'Customer Question',
         text: 'You have a new message',
         html: output,
@@ -87,8 +87,8 @@ app.post('/api/customer', (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: 'YOUR EMAIL ADDRESS',
-            pass: 'YOUR EMAIL ADDRESS PASSWORD',
+            user: 'lopresti.chris@gmail.com',
+            pass: 'ctrock21',
         },
         tls: {
             rejectUnauthorized: false
@@ -97,7 +97,7 @@ app.post('/api/customer', (req, res) => {
 
     // email options <{sameEmailAsAbove}>, this time the "to" is to the email in the form
     let mailOptions = {
-        from: '"Smoke N\' Mirrors" <SAMEEMAILASABOVE@SAMEPROVIDER.com>',
+        from: '"Smoke N\' Mirrors" <lopresti.chris@gmail.com>',
         to: req.body.email,
         subject: 'We received your email',
         text: 'We will get back to you shortly',
