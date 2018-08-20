@@ -6,7 +6,13 @@
  <br/>
  The code on this page will not be able to send emails because github pages does not support server code.
  However, you will be able to store the contact form in firebase.
-
+  **ALSO**
+  In the index.js page found in the outer samplesite directory (where the server code lives),
+  make sure to update the appropriate fields with your email information.
+   **FURTHERMORE**
+   Make sure yo get a firebase api and fill in the firebase api information in the contact.js page
+  
+ 
 ## About this project
 
 This is a sample project for a responsive react webpage.
