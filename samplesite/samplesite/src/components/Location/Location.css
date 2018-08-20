@@ -3,10 +3,21 @@
     height: auto;
 }
 
+#location-header {
+    background-color: white;
+    color: black;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
 #location-image-container {
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 45px 15px 15px 15px;
+    padding: 25px 15px 15px 15px;
 }
 
 #image-button {

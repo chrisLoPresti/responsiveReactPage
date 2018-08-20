@@ -20,12 +20,7 @@ class Devices extends React.Component {
         }
     };
 
-    componentWillReceiveProps(props) {
-        this.setState({
-            currentIndex: props.imageIndex,
-        });
-    }
-
+    // opens the modal with the corresponding image that was clicked on
     openImage = (i) => () => {
         this.setState({
             openModal: true,
@@ -33,6 +28,7 @@ class Devices extends React.Component {
         })
     };
 
+    // closes the modal and resets the index to 0
     closeImage = () => {
         this.setState({
             openModal: false,
@@ -40,6 +36,7 @@ class Devices extends React.Component {
         })
     };
 
+    // simple grid: Displays texts and images
     render() {
         const {openModal, imageIndex, images} = this.state;
         return (
@@ -73,7 +70,7 @@ class Devices extends React.Component {
                         >
                             {images.map((tile, index) => (
                                 <GridListTile
-                                    key={tile.title}
+                                    key={index}
                                     cols={1}
                                 >
                                     <img

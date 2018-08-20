@@ -1,4 +1,6 @@
 #about-section {
+    height: 100%;
+    width: 100%;
     background-color: whitesmoke;
 }
 
@@ -7,10 +9,23 @@
     padding-left: 30px;
 }
 
+#about-grid {
+    width: 100%;
+    height: auto;
+}
+
 #about-paragraph {
-    padding-left: 30px;
-    width: 60%;
-    padding-bottom: 50px;
+    transition: .3s;
+    padding: 30px;
+    width: 70%;
+}
+
+@media only screen and (max-width: 960px) {
+
+    #about-paragraph {
+        transition: .3s;
+        width: 80%;
+    }
 }
 
 #about-image-container {
@@ -19,16 +34,20 @@
     padding: 50px 15px 15px 15px;
 }
 
+#button-container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
 #about-image {
     width: 100%;
     height: auto;
 }
 
-#about-question-button{
+#about-question-button {
     font-size: 12px;
     background-color: #004e77;
     color: white;
-    float: right;
-    margin-top: 25px;
-    margin-bottom: 50px;
+    margin: 25px auto 25px auto;
 }

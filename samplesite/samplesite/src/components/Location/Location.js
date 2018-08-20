@@ -7,10 +7,12 @@ import {
 import LocationPic from '../../Images/location.png';
 import './Location.css';
 
+// simple grid that holds the location and hours for the store
 const Location = () => (
-
-
     <div id="location-section">
+        <Typography id="location-header" variant="title">
+            Location and Hours
+        </Typography>
         <Grid container>
             <Grid
                 id="location-image-container"

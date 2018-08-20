@@ -20,6 +20,7 @@ class Juices extends React.Component {
         }
     };
 
+    // opens the modal with the corresponding image that was clicked on
     openImage = i => () => {
         this.setState({
             imageIndex: i,
@@ -27,12 +28,14 @@ class Juices extends React.Component {
         })
     };
 
+    // closes the modal and resets the index to 0
     closeImage = () => {
         this.setState({
             openModal: false,
         })
     };
 
+    // simple grid: Displays texts and images
     render() {
         const {
             openModal,
@@ -53,7 +56,7 @@ class Juices extends React.Component {
                         >
                             {images.map((tile, index) => (
                                 <GridListTile
-                                    key={tile.title}
+                                    key={index}
                                     cols={1}
                                 >
                                     <img
