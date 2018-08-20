@@ -1,3 +1,12 @@
+## Git Hub Pages Link
+
+ http://chrisLoPresti.github.io/responsiveReactPage
+ 
+ **important**
+ <br/>
+ The code on this page will not be able to send emails because github pages does not support server code.
+ However, you will be able to store the contact form in firebase.
+
 ## About this project
 
 This is a sample project for a responsive react webpage.
